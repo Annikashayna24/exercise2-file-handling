@@ -1,0 +1,2 @@
+Today I learned file handling in Python
+This is my second note

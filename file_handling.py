@@ -1,0 +1,40 @@
+try:
+    message = input("Enter a short note/message: ")
+
+    with open("notes.txt", "w") as file:
+        file.write(message + "\n")
+
+    print("\nMessage saved successfully!")
+
+except Exception as e:
+    print("Error while writing to file:", e)
+
+
+try:
+    with open("notes.txt", "r") as file:
+        content = file.read()
+
+    print("\nContent of the file:")
+    print(content)
+
+except FileNotFoundError:
+    print("Error: File not found.")
+
+
+try:
+    new_message = input("\nEnter another note to append: ")
+
+    with open("notes.txt", "a") as file:
+        file.write(new_message + "\n")
+
+    print("\nNote appended successfully!")
+
+    # Display updated content
+    with open("notes.txt", "r") as file:
+        updated_content = file.read()
+
+    print("\nUpdated file content:")
+    print(updated_content)
+
+except Exception as e:
+    print("Error while appending to file:", e)
