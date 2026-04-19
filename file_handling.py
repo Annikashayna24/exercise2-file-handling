@@ -29,7 +29,6 @@ try:
 
     print("\nNote appended successfully!")
 
-    # Display updated content
     with open("notes.txt", "r") as file:
         updated_content = file.read()
 
